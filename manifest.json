@@ -3,10 +3,16 @@
     "name": "DeadLine Highlighter",
     "version": "1.0.0",
     "description": "A extension which shows all uni deadlines",
+    "action":{
+        "default_popup": "index.html"
+
+    },
     "content_scripts":[
         {
             "js": ["logic.js"],
             "matches": ["<all_urls>"]
+            
+            
         }
     ]
    
