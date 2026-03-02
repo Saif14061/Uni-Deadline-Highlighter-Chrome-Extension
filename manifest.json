@@ -1,0 +1,15 @@
+{
+    "manifest_version": 3,
+    "name": "DeadLine Highlighter",
+    "version": "1.0.0",
+    "description": "A extension which shows all uni deadlines",
+    "content_scripts":[
+        {
+            "js": ["logic.js"],
+            "matches": ["<all_urls>"]
+        }
+    ]
+   
+
+
+}
