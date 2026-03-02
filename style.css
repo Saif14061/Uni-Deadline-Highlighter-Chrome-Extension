@@ -34,7 +34,15 @@
     
 
 }
+#colour-list{
+    display: flex;
+    gap: 20px;
+    list-style-type: none;
+    margin-top: -14px
+    
+    
 
+}
 
 .section-2 {
     border: 1px solid blue;
