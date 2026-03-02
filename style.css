@@ -29,6 +29,8 @@
     color:white;
     border-radius:10px;
     text-align: center;
+    padding: 20px;
+    margin: -8;
     
 
     
@@ -41,18 +43,27 @@
     margin-top: -14px
     
     
+    
+    
 
 }
+#date-time{
+  display: flex;
+  gap: 10px;
+  list-style-type: none;
 
-.section-2 {
-    border: 1px solid blue;
-    border-radius:10px;
+}
+.section-2 {  
+    border-radius:1px;
+    background-color: rgb(247, 248, 252);
+    padding: 20px;
+    margin: -10;
 
 }
 
 #cards1 {
-    border: 1px solid green;
-}
-#cards2 {
-    border: 1px solid green;
+    border: 1px solid;
+    margin-top: 20px;
+    border-radius: 10px;
+    
 }
