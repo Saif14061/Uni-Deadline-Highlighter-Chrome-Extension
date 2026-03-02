@@ -1,0 +1,14 @@
+.section-1 {
+    border: 1px solid red;
+}
+
+.section-2 {
+    border: 1px solid blue;
+}
+
+#cards1 {
+    border: 1px solid green;
+}
+#cards2 {
+    border: 1px solid green;
+}

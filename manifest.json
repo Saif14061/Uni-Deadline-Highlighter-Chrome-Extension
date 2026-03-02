@@ -2,7 +2,7 @@
     "manifest_version": 3,
     "name": "DeadLine Highlighter",
     "version": "1.0.0",
-    "description": "A extension which shows all uni deadlines",
+    "description": "A extension which shows all uni deadlines all togther",
     "action":{
         "default_popup": "index.html"
 
