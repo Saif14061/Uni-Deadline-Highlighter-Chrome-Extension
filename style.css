@@ -43,7 +43,8 @@ body{
     display: flex;
     gap: 20px;
     list-style-type: none;
-    margin-top: -14px
+    margin-top: -14px;
+    white-space: nowrap;
     
     
     
@@ -54,6 +55,7 @@ body{
   display: flex;
   gap: 10px;
   list-style-type: none;
+ 
   
 
 }
