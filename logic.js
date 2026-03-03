@@ -12,6 +12,7 @@ function scanPage(){
         if(text.includes("Due on")){
             let parts = text.split("Due on")
             if(parts[1]){
+                chrome.storage.local.set({ deadlines: date})
                 let date = parts[1].split("PM")[0].trim() + "PM"
                 console.log("Date found " + date)
             }
