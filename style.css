@@ -36,6 +36,9 @@
     
 
 }
+body{
+  background-color: rgb(247, 248, 252);
+}
 #colour-list{
     display: flex;
     gap: 20px;
