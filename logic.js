@@ -16,7 +16,11 @@ function scanPage(){
                 console.log("Date found " + date)
                 chrome.storage.local.get(["deadlines"]).then((result) => {
                     let existing = result.deadlines || []
-                    existing.push(date)
+                    if(!existing.includes(date)){
+                        existing.push(date)
+                        
+                    }
+                    
                     chrome.storage.local.set({ deadlines: existing })
                 })
             }
