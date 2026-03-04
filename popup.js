@@ -3,5 +3,6 @@ chrome.storage.local.get(["deadlines"]).then((result) => {
     let div = document.createElement("div")
     div.textContent = date
     document.getElementsByClassName("section-3")[0].appendChild(div)
+    div.className = "cards1"
   })
 })
