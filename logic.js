@@ -5,26 +5,29 @@ let observer = new MutationObserver(function(){
 observer.observe(document.body, {childList: true, subtree: true})
 
 function scanPage(){
-    let elements = document.querySelectorAll("p,div,span")
-    let names = document.querySelectorAll(".d2l-foldername strong")
+    let rows = document.querySelectorAll(".d2l-table-row, tr")
     
-    elements.forEach(function(element, index){
-        let text = element.textContent
-        if(text.includes("Due on")){
-            let parts = text.split("Due on")
-            if(parts[1]){
-                let date = parts[1].split("PM")[0].trim() + "PM"
-                let assignmentName = element.closest("tr") ? element.closest("tr").querySelector(".d2l-foldername strong")?.textContent : "Unknown"
-                console.log("date: " + date + " | name: " + assignmentName)
-                console.log("name found: " + names.length)
-                chrome.storage.local.get(["deadlines"]).then((result) => {
-                    let existing = result.deadlines || []
-                    let alreadyExists = existing.some(item => item.date === date)
-                    if(!alreadyExists){
-                        existing.push({ date: date, name: assignmentName })
-                    }
-                    chrome.storage.local.set({ deadlines: existing })
-                })
+    rows.forEach(function(row){
+        let nameEl = row.querySelector(".d2l-foldername strong")
+        let dateEl = row.querySelector(".d2l-folderdates-wrapper")
+        
+        if(nameEl && dateEl){
+            let text = dateEl.textContent
+            if(text.includes("Due on")){
+                let parts = text.split("Due on")
+                if(parts[1]){
+                    let date = parts[1].split("PM")[0].trim() + "PM"
+                    let assignmentName = nameEl.textContent.trim()
+                    console.log("Name: " + assignmentName + " | Date: " + date)
+                    chrome.storage.local.get(["deadlines"]).then((result) => {
+                        let existing = result.deadlines || []
+                        let alreadyExists = existing.some(item => item.date === date)
+                        if(!alreadyExists){
+                            existing.push({ date: date, name: assignmentName })
+                        }
+                        chrome.storage.local.set({ deadlines: existing })
+                    })
+                }
             }
         }
     })
