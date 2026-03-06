@@ -18,7 +18,10 @@ chrome.storage.local.get(["deadlines"]).then((result) => {
             } else {
                 div.className = "cards1 seven-plus-days"
             }
-            document.getElementsByClassName("section-3")[0].appendChild(div)
+            if(diffInDays >=0){
+                document.getElementsByClassName("section-3")[0].appendChild(div)
+            }
+            
         })
     }
 })
