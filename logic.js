@@ -25,7 +25,9 @@ function scanPage(){
                         if(!alreadyExists){
                             existing.push({ date: date, name: assignmentName })
                         }
-                        chrome.storage.local.set({ deadlines: existing })
+                        chrome.storage.local.set({ deadlines: existing }).then(() => {
+                            console.log("Saved to storage!")
+                        })
                     })
                 }
             }

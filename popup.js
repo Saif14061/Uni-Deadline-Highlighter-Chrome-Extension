@@ -1,5 +1,6 @@
 chrome.storage.local.get(["deadlines"]).then((result) => {
     if(result.deadlines){
+        console.log("items: ", result.deadlines)
         result.deadlines.forEach(function(item){
             let div = document.createElement("div")
             div.textContent = item.name + " — " + item.date
@@ -18,7 +19,7 @@ chrome.storage.local.get(["deadlines"]).then((result) => {
             } else {
                 div.className = "cards1 seven-plus-days"
             }
-            if(diffInDays >=0){
+            if(diffInDays >=-999){
                 document.getElementsByClassName("section-3")[0].appendChild(div)
             }
             
